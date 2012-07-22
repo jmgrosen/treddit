@@ -11,20 +11,20 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django_mongodb_engine', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'treddit_dev',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': open('DB_PASSWORD').read(),                  # Not used with sqlite3.
-        'HOST': 'treddit-jmgrosen.dotcloud.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '32669',                      # Set to empty string for default. Not used with sqlite3.
+        'HOST': 'treddit-jmgrosen-data-0.dotcloud.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '32668',                      # Set to empty string for default. Not used with sqlite3.
     },
     'production': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django_mongodb_engine', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'treddit_production',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': open('DB_PASSWORD').read(),                  # Not used with sqlite3.
-        'HOST': 'treddit-jmgrosen.dotcloud.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '32669',                      # Set to empty string for default. Not used with sqlite3.
+        'HOST': 'treddit-jmgrosen-data-0.dotcloud.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '32668',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
