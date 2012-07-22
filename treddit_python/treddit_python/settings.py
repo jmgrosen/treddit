@@ -1,4 +1,4 @@
-# Django settings for treddit project.
+# Django settings for treddit_python project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -81,7 +81,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '=&amp;jzkalt_+=tbq54x%xdyyetb5)w3j_uzgeons20$z&amp;c4p=fx%'
+SECRET_KEY = '&amp;o00u18e4n&amp;6e$d1q8_fes2cw4^u(%)d%52l1kix7x6*8m6ls0'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -100,10 +100,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'treddit.urls'
+ROOT_URLCONF = 'treddit_python.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'treddit.wsgi.application'
+WSGI_APPLICATION = 'treddit_python.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

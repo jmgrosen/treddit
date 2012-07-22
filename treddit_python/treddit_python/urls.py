@@ -6,8 +6,8 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'treddit.views.home', name='home'),
-    # url(r'^treddit/', include('treddit.foo.urls')),
+    # url(r'^$', 'treddit_python.views.home', name='home'),
+    # url(r'^treddit_python/', include('treddit_python.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

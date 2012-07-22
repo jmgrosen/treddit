@@ -1,5 +1,5 @@
 """
-WSGI config for treddit project.
+WSGI config for treddit_python project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
@@ -15,7 +15,7 @@ framework.
 """
 import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "treddit.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "treddit_python.settings")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
