@@ -2,4 +2,4 @@ www:
     type: python
     approot: treddit_python/treddit_python
 data:
-    type: mysql
+    type: mongodb
