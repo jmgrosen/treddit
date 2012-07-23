@@ -1,0 +1,158 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ul.trades {
+  list-style: none;
+  margin-left: 0;
+  height: 600px;
+}
+.trade-div {
+  margin-top: 75px;
+}
+li.trade {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-bottom: 2px solid #414141;
+  padding-bottom: 10px;
+}
+ul.trans-trade {
+  margin-top: 12px;
+  list-style: none;
+  width: 450px;
+}
+ul.trans-trade h2 {
+  color: #404040;
+  font-family: 'TF2 Build';
+  margin-top: -30px;
+}
+li.item {
+  margin-bottom: 5px;
+  text-align: left;
+  display: inline-block;
+  background-color: #404040;
+  margin-left: 0;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  border-width: 3px;
+  border-style: solid;
+}
+li.item a img {
+  width: 96px;
+  height: 96px;
+}
+li.item.normal {
+  border-color: #b2b2b2;
+}
+li.item.unique {
+  border-color: #ffd700;
+}
+li.item.vintage {
+  border-color: #476291;
+}
+li.item.genuine {
+  border-color: #4d7455;
+}
+li.item.strange {
+  border-color: #cf6a32;
+}
+li.item.unusual,
+li.item.haunted {
+  border-color: #8650ac;
+}
+li.item.community,
+li.item.self-made {
+  border-color: #70b04a;
+}
+li.item.valve {
+  border-color: #a50f79;
+}
+.arrow {
+  display: inline-block;
+  float: left;
+  margin-top: 40px;
+  position: relative;
+  background: rgba(128, 128, 128, 0.2);
+  width: 100px;
+  height: 40px;
+}
+.arrow:after {
+  display: inline-block;
+  content: " ";
+  width: 0;
+  height: 0;
+  margin-top: -20px;
+  margin-left: 100px;
+  position: relative;
+  border-top: 40px solid transparent;
+  border-left: 50px solid rgba(128, 128, 128, 0.2);
+  border-bottom: 40px solid transparent;
+}
+.account {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #fff;
+}
+.account img {
+  margin-right: 10px;
+  height: 48px;
+  width: 48px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.account.online img {
+  border: 3px solid #8ecafc;
+}
+.account.online a {
+  color: #8ecafc;
+  -webkit-transition: ease-in-out 0.1s color;
+  -moz-transition: ease-in-out 0.1s color;
+  -ms-transition: ease-in-out 0.1s color;
+  -o-transition: ease-in-out 0.1s color;
+  transition: ease-in-out 0.1s color;
+}
+.account.online a:hover {
+  color: #5cb3fb;
+  text-decoration: none;
+}
+.account.in-game img {
+  border: 3px solid #aefc4e;
+}
+.account.in-game a {
+  color: #aefc4e;
+  -webkit-transition: ease-in-out 0.1s color;
+  -moz-transition: ease-in-out 0.1s color;
+  -ms-transition: ease-in-out 0.1s color;
+  -o-transition: ease-in-out 0.1s color;
+  transition: ease-in-out 0.1s color;
+}
+.account.in-game a:hover {
+  color: #97fb1c;
+  text-decoration: none;
+}

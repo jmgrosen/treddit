@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Treddit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+      }
+    </style>
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/tf2.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+    
+
+    <div class="container">
+
+      <div class="top-bar">
+	<ul class="top-bar-nav">
+	  <li><a class="submit-trade" title="Submit a trade" href="#"><i class="icon-plus icon-white"></i></a></li>
+	  <li><a class="submit-trade" title="Messages" href="#"><i class="icon-inbox icon-white"></i></a></li>
+	</ul>
+      </div>
+
+      <header class="center">
+	<h1 style="font-family: 'TF2 Build'">Treddit</h1>
+      </header>
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit" id="search">
+	<form class="form-search">
+	  <fieldset>
+	    <div class="control-group">
+	      <div class="controls">
+		<div id="search" class="input-append">
+		  <input class="span7" id="foobar" size="16" type="text">
+		  <button class="btn btn-warning" type="button" onclick="javascript:viewTrades()">Buying</button>
+		  <button class="btn btn-warning" type="button" onclick="javascript:viewTrades()">Selling</button>
+		</div>
+	      </div>
+	    </div>
+	  </fieldset>
+	</form>
+      </div>
+      <div id="search-results" style="display: none">
+	<ul class="trades">
+	  <li class="trade">
+	    <div class="account online pull-left"><img src="http://media.steampowered.com/steamcommunity/public/images/avatars/fe/fe70534515852919ab03ed6f4077874cfb83fb4f_full.jpg"><a href="#">chaosk | jollyranchers</a></div>
+	    <div class="trade-div">
+	      <ul class="trans-trade pull-left">
+		<h2>is selling</h2>
+		<li class="item unique"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/fwk_engineer_cranial.3e625771983a94137ae1191df7714b62cb8164ef.png"></a></li>
+		<li class="item unusual"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/c_bet_brinkhood.6e89bdcb3f0a2eee33acdb02a3614aeac460041f.png"></a></li>
+		<li class="item unique"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/fwk_engineer_cranial.3e625771983a94137ae1191df7714b62cb8164ef.png"></a></li>
+		<li class="item unusual"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/c_bet_brinkhood.6e89bdcb3f0a2eee33acdb02a3614aeac460041f.png"></a></li>
+		<li class="item unique"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/fwk_engineer_cranial.3e625771983a94137ae1191df7714b62cb8164ef.png"></a></li>
+		<li class="item unusual"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/c_bet_brinkhood.6e89bdcb3f0a2eee33acdb02a3614aeac460041f.png"></a></li>
+	      </ul>
+	      <div class="arrow"></div>
+	      <ul class="trans-trade pull-right">
+		<h2>is buying</h2>
+		<li class="item unique"><a href="#"><img src="http://cdn.steamcommunity.com/economy/image/K07kmbpqCYYXVwH0ECPy1ZMCLij-GgfGw5nS7vTFunLiRdNi43ZPlLeOHQo2Q65biwV1bPAFB8LFktX89cane-Z3zGvLeUifuJMhCToeqE7VQD8-9gxLycOb37i8jv12sR-WNKwlCZfjkkYDalitTZkSOGzyBk6SwtPL4b0=/330x192"></a><span class="quantity">1.33</span></li>
+		<li class="item unique"><a href="#"><img src="http://cdn.steamcommunity.com/economy/image/CbtDHr-sZ9YqUcyYnND8OLH3ia_73GmW_p8fgng2tJ_AsHTl5rAhxIqI0Ga6sKC2qfDS6_XDaZL4lBiQeS6lg_6xZfj2sH2V2pXWO-Kro6C9tJ7pp8Zyn_7LTtdkJPHOxbs36aO0Mpbcw4tr4fnx6Kntmg==/330x192"></a><span class="quantity">4</span></li> 
+	      </ul>
+	    </div>
+	  </li>
+	  <li class="trade">
+	    <div class="account in-game pull-left"><img src="http://media.steampowered.com/steamcommunity/public/images/avatars/21/216b03117e879bbeab821ee0753e33d19de00d09_full.jpg"><a href="#">[MH]MeNinja^_^</a></div>
+	    <div class="trade-div">
+	      <ul class="trans-trade pull-left">
+		<h2>is selling</h2>
+		<li class="item unique"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/fwk_engineer_cranial.3e625771983a94137ae1191df7714b62cb8164ef.png"></a></li>
+		<li class="item unusual"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/c_bet_brinkhood.6e89bdcb3f0a2eee33acdb02a3614aeac460041f.png"></a></li> 
+	      </ul>
+	      <div class="arrow"></div>
+	      <ul class="trans-trade pull-right">
+		<h2>is buying</h2>
+		<li class="item unique"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/fwk_engineer_cranial.3e625771983a94137ae1191df7714b62cb8164ef.png"></a></li>
+		<li class="item unusual"><a href="#"><img src="http://media.steampowered.com/apps/440/icons/c_bet_brinkhood.6e89bdcb3f0a2eee33acdb02a3614aeac460041f.png"></a></li> 
+	      </ul>
+	    </div>
+	  </li>
+	</ul>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+	 ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script>
+      $('#search input').typeahead({source: ['Scorch Shot', 'Flare Gun', 'Fire Axe']});
+      function viewTrades() {
+      $('#search-results').slideDown(400);
+      }
+      $('.top-bar-nav li a').tooltip({placement: 'bottom'});
+    </script>
+  </body>
+</html>

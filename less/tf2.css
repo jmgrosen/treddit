@@ -1,0 +1,6 @@
+ul.trades {
+  list-style: none;
+}
+li.trade {
+  height: 100px;
+}

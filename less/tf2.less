@@ -1,0 +1,97 @@
+
+@import "mixins.less";
+@import "variables.less";
+
+ul.trades {
+    list-style: none;
+    margin-left: 0;
+    height: 600px;
+}
+
+.trade-div {
+    margin-top: 75px;
+}
+
+li.trade {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-bottom: 2px solid darken(@gray, 8%);
+    padding-bottom: 10px;
+}
+
+ul.trans-trade {
+    margin-top: 12px;
+    list-style: none;
+    width: 450px;
+    h2 {
+        color: lighten(@grayDark, 5%);
+	font-family: 'TF2 Build';
+	margin-top: -30px;
+    }
+}
+
+li.item {
+    margin-bottom: 5px;
+    text-align: left;
+    display: inline-block;
+    background-color: lighten(@grayDark, 5%);
+    margin-left: 0;
+    .border-radius(10px 10px 10px 10px);
+    border-width: 3px;
+    border-style: solid;
+    a img {
+        width: 96px;
+	height: 96px;
+    }
+    &.normal { border-color: #B2B2B2 }
+    &.unique { border-color: #FFD700 }
+    &.vintage { border-color: #476291 }
+    &.genuine { border-color: #4D7455 }
+    &.strange { border-color: #CF6A32 }
+    &.unusual, &.haunted { border-color: #8650AC }
+    &.community, &.self-made { border-color: #70B04A }
+    &.valve { border-color: #A50F79 }
+}
+
+.arrow {
+    display: inline-block;
+    float: left;
+    margin-top: 40px;
+    position: relative;
+    background: rgba(128, 128, 128, 0.2);
+    width: 100px;
+    height: 40px;
+    &:after {
+    	display: inline-block;
+        content: " ";
+	width: 0;
+	height: 0;
+	margin-top: -20px;
+	margin-left: 100px;
+	position: relative;
+	border-top: 40px solid transparent;
+	border-left: 50px solid rgba(128, 128, 128, 0.2);
+	border-bottom: 40px solid transparent;
+    }
+}
+
+.account {
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #fff;
+    img {
+        margin-right: 10px;
+        height: 48px;
+        width: 48px;
+        .border-radius(5px 5px 5px 5px);
+    }
+    &.online img { border: 3px solid #8ecafc; }
+    &.online a { color: #8ecafc; .transition(ease-in-out .1s color) }
+    &.online a:hover { color: darken(#8ecafc, 10%); text-decoration: none }
+    
+    &.in-game img { border: 3px solid #aefc4e; }
+    &.in-game a { color: #aefc4e; .transition(ease-in-out .1s color) }
+    &.in-game a:hover { color: darken(#aefc4e, 10%); text-decoration: none }
+    
+}
