@@ -46,10 +46,12 @@ li.item {
     border-style: solid;
     width: 96px;
     height: 96px;
-    a img {
+    a img, .item-image {
         width: 96px;
 	height: 96px;
+	display: inline-block;
     }
+    &.empty { border-color: @grayLight; margin-top: -100px }
     &.normal { border-color: #B2B2B2 }
     &.unique { border-color: #FFD700 }
     &.vintage { border-color: #476291 }
@@ -59,7 +61,7 @@ li.item {
     &.community, &.self-made { border-color: #70B04A }
     &.valve { border-color: #A50F79 }
     .quantity {
-        background-color: @gray;
+        &.q-2 {background-color: @gray }
 	.border-radius(0 0 5px 5px);
         font-family: @serifFontFamily;
         position: relative;

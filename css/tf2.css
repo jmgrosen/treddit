@@ -67,9 +67,15 @@ li.item {
   width: 96px;
   height: 96px;
 }
-li.item a img {
+li.item a img,
+li.item .item-image {
   width: 96px;
   height: 96px;
+  display: inline-block;
+}
+li.item.empty {
+  border-color: #999999;
+  margin-top: -100px;
 }
 li.item.normal {
   border-color: #b2b2b2;
@@ -98,7 +104,6 @@ li.item.valve {
   border-color: #a50f79;
 }
 li.item .quantity {
-  background-color: #555555;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
@@ -113,6 +118,9 @@ li.item .quantity {
   width: 100%;
   margin-top: -35px;
   font-size: 18px;
+}
+li.item .quantity.q-2 {
+  background-color: #555555;
 }
 .arrow {
   display: inline-block;
