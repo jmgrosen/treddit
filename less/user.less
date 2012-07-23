@@ -1,17 +1,23 @@
 
+header h1 {
+    font-family: @serifFontFamily;
+}
+
 .top-bar {
     position: fixed;
     margin-top: -60px;
     margin-left: 20px;
     color: white;
-    width: 300px;
+    /* width: 300px; */
     height: 40px;
     .border-radius(0 0 5px 5px);
     background-color: @gray;
+    z-index: 100;
 }
 
 .top-bar-nav {
     margin-left: 11px;
+    margin-right: 11px;
     margin-top: 9px;
     list-style: none;
 }
@@ -64,8 +70,39 @@ body {
 
 #search-results {
     margin-top: 0;
-    width: 1100px;
+    width: 900px;
+    padding-bottom: 10px;
     background-color: @grayDark;
     .border-radius(0 0 10px 10px);
     .center();
+}
+
+.profile {
+    margin-right: 20px;
+    vertical-align: middle;
+    padding-top: 1px;
+    a img {
+        margin-top: -3px;
+        border-width: 2px;
+	border-style: solid;
+	.border-radius(2px 2px 2px 2px);
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+    }
+    &.online a { color: #8ecafc; .transition(ease-in-out .1s color) }
+    &.online a:hover { color: darken(#8ecafc, 10%); text-decoration: none }
+    &.online img { border-color: #8ecafc }
+}
+
+@media (min-width: 1200px) {
+    #search-results { width: 1100px }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    #search-results { width: 700px }
+}
+
+@media (max-width: 767px) {
+    #search-results { width: 500px }
 }

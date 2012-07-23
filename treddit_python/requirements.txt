@@ -1,4 +1,0 @@
-Django
-https://bitbucket.org/wkornewald/django-nonrel/get/tip.tar.gz
-https://bitbucket.org/wkornewald/djangotoolbox/get/tip.tar.gz
-django-mongodb-engine

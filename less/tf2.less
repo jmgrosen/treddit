@@ -5,7 +5,6 @@
 ul.trades {
     list-style: none;
     margin-left: 0;
-    height: 600px;
 }
 
 .trade-div {
@@ -20,13 +19,17 @@ li.trade {
     padding-bottom: 10px;
 }
 
+li.trade:last-child {
+    border-bottom: none;
+}
+
 ul.trans-trade {
     margin-top: 12px;
     list-style: none;
     width: 450px;
     h2 {
         color: lighten(@grayDark, 5%);
-	font-family: 'TF2 Build';
+	font-style: serif;
 	margin-top: -30px;
     }
 }
@@ -36,10 +39,13 @@ li.item {
     text-align: left;
     display: inline-block;
     background-color: lighten(@grayDark, 5%);
-    margin-left: 0;
+    margin-left: 2px;
+    margin-right: 2px;
     .border-radius(10px 10px 10px 10px);
     border-width: 3px;
     border-style: solid;
+    width: 96px;
+    height: 96px;
     a img {
         width: 96px;
 	height: 96px;
@@ -52,6 +58,21 @@ li.item {
     &.unusual, &.haunted { border-color: #8650AC }
     &.community, &.self-made { border-color: #70B04A }
     &.valve { border-color: #A50F79 }
+    .quantity {
+        background-color: @gray;
+	.border-radius(0 0 5px 5px);
+        font-family: @serifFontFamily;
+        position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: @grayLighter;
+	margin: 0 auto;
+	float: none;
+	width: 100%;
+	margin-top: -35px;
+	font-size: 18px;
+    }
 }
 
 .arrow {

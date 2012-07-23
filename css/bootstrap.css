@@ -4219,20 +4219,26 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+header h1 {
+  font-family: "TF2 Build", Georgia, "Times New Roman", Times, serif;
+}
 .top-bar {
   position: fixed;
   margin-top: -60px;
   margin-left: 20px;
   color: white;
-  width: 300px;
+  /* width: 300px; */
+
   height: 40px;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
   background-color: #555555;
+  z-index: 100;
 }
 .top-bar-nav {
   margin-left: 11px;
+  margin-right: 11px;
   margin-top: 9px;
   list-style: none;
 }
@@ -4287,7 +4293,8 @@ body {
 }
 #search-results {
   margin-top: 0;
-  width: 1100px;
+  width: 900px;
+  padding-bottom: 10px;
   background-color: #333333;
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -4295,4 +4302,50 @@ body {
   margin: 0 auto;
   text-align: center;
   float: none;
+}
+.profile {
+  margin-right: 20px;
+  vertical-align: middle;
+  padding-top: 1px;
+}
+.profile a img {
+  margin-top: -3px;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+.profile.online a {
+  color: #8ecafc;
+  -webkit-transition: ease-in-out 0.1s color;
+  -moz-transition: ease-in-out 0.1s color;
+  -ms-transition: ease-in-out 0.1s color;
+  -o-transition: ease-in-out 0.1s color;
+  transition: ease-in-out 0.1s color;
+}
+.profile.online a:hover {
+  color: #5cb3fb;
+  text-decoration: none;
+}
+.profile.online img {
+  border-color: #8ecafc;
+}
+@media (min-width: 1200px) {
+  #search-results {
+    width: 1100px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #search-results {
+    width: 700px;
+  }
+}
+@media (max-width: 767px) {
+  #search-results {
+    width: 500px;
+  }
 }

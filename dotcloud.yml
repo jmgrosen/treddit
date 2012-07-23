@@ -1,5 +1,0 @@
-www:
-    type: python
-    approot: treddit_python
-data:
-    type: mongodb

@@ -28,7 +28,6 @@
 ul.trades {
   list-style: none;
   margin-left: 0;
-  height: 600px;
 }
 .trade-div {
   margin-top: 75px;
@@ -40,6 +39,9 @@ li.trade {
   border-bottom: 2px solid #414141;
   padding-bottom: 10px;
 }
+li.trade:last-child {
+  border-bottom: none;
+}
 ul.trans-trade {
   margin-top: 12px;
   list-style: none;
@@ -47,7 +49,7 @@ ul.trans-trade {
 }
 ul.trans-trade h2 {
   color: #404040;
-  font-family: 'TF2 Build';
+  font-style: serif;
   margin-top: -30px;
 }
 li.item {
@@ -55,12 +57,15 @@ li.item {
   text-align: left;
   display: inline-block;
   background-color: #404040;
-  margin-left: 0;
+  margin-left: 2px;
+  margin-right: 2px;
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   border-width: 3px;
   border-style: solid;
+  width: 96px;
+  height: 96px;
 }
 li.item a img {
   width: 96px;
@@ -91,6 +96,23 @@ li.item.self-made {
 }
 li.item.valve {
   border-color: #a50f79;
+}
+li.item .quantity {
+  background-color: #555555;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  font-family: "TF2 Build", Georgia, "Times New Roman", Times, serif;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  color: #eeeeee;
+  margin: 0 auto;
+  float: none;
+  width: 100%;
+  margin-top: -35px;
+  font-size: 18px;
 }
 .arrow {
   display: inline-block;
