@@ -45,12 +45,15 @@ li.trade:last-child {
 ul.trans-trade {
   margin-top: 12px;
   list-style: none;
-  width: 450px;
+  width: 350px;
 }
 ul.trans-trade h2 {
   color: #404040;
   font-style: serif;
   margin-top: -30px;
+}
+ul.trans-trade.pull-right {
+  margin-right: 20px;
 }
 li.item {
   margin-bottom: 5px;
@@ -64,13 +67,14 @@ li.item {
   border-radius: 10px 10px 10px 10px;
   border-width: 3px;
   border-style: solid;
-  width: 96px;
-  height: 96px;
+  width: 72px;
+  height: 72px;
 }
+li.item a,
 li.item a img,
 li.item .item-image {
-  width: 96px;
-  height: 96px;
+  width: 72px;
+  height: 72px;
   display: inline-block;
 }
 li.item.empty {
@@ -126,25 +130,26 @@ li.item .quantity.q-2 {
   display: inline-block;
   float: left;
   margin-top: 40px;
+  margin-left: 10px;
   position: relative;
   background: rgba(128, 128, 128, 0.2);
-  width: 100px;
-  height: 40px;
+  width: 70px;
+  height: 30px;
 }
 .arrow:after {
   display: inline-block;
   content: " ";
   width: 0;
   height: 0;
-  margin-top: -20px;
-  margin-left: 100px;
+  margin-top: -25px;
+  margin-left: 70px;
   position: relative;
   border-top: 40px solid transparent;
   border-left: 50px solid rgba(128, 128, 128, 0.2);
   border-bottom: 40px solid transparent;
 }
 .account {
-  margin-left: 20px;
+  margin-left: 30px;
   margin-top: 20px;
   color: #fff;
 }
@@ -185,4 +190,25 @@ li.item .quantity.q-2 {
 .account.in-game a:hover {
   color: #97fb1c;
   text-decoration: none;
+}
+@media (min-width: 1200px) {
+  ul.trans-trade {
+    width: 450px;
+  }
+  li.item,
+  li.item a,
+  li.item a img,
+  li.item .item-image {
+    width: 96px;
+    height: 96px;
+  }
+  .arrow {
+    margin-left: 5px;
+    width: 100px;
+    height: 40px;
+  }
+  .arrow:after {
+    margin-top: -20px;
+    margin-left: 100px;
+  }
 }
