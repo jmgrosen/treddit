@@ -25,6 +25,7 @@ var template = jsontemplate.Template('{.repeated section trades}<li class="trade
 function addTrades(query) {
     if (history) history.pushState(null, null, "search?q='" + query +"'");
     $.get('search.json', function(data) {
+	    console.log(data);
         foo = JSON.parse(data);
         $('.trades').append(template.expand(JSON.parse(data)));
         $('.item a').tooltip({placement: 'bottom'});
