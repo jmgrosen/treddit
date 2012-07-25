@@ -30,8 +30,8 @@ function getUrlVars() {
     return vars;
 }
 
-function addTrades(query) {
-    if (history) history.pushState(null, null, "search?q='" + query +"'");
+function addTrades(query, push) {
+    if (history && push) history.pushState(null, null, "search?q=" + query);
     $.get('search.json', function(data) {
         $('.trades').append(template.expand(data));
         $('.item a').tooltip({placement: 'bottom'});
@@ -45,14 +45,15 @@ function removeTrades() {
     $('.trade').remove();
 }
 
-function viewTrades() {
+function viewTrades(push) {
+    if (push === undefined) push = true;
     if ($('.trade').length == 0) {
         document.title = $('#search_field').val() + ' results on Treddit';
-	addTrades($('#search_field').val());
+	addTrades($('#search_field').val(), push);
     } else {
         removeTrades();
         document.title = $('#search_field').val() + ' results on Treddit';
-        addTrades($('#search_field').val());
+        addTrades($('#search_field').val(), push);
     }
     return false;
 }
@@ -64,7 +65,7 @@ $(window).bind("popstate", function(event) {
     if (initialPop) return;
     if (getUrlVars().q) {
         $('#search_field').val(unescape(getUrlVars().q));
-        viewTrades();
+        viewTrades(false);
     } else {
          document.title = 'Treddit';
          $('#search_field').val('');
