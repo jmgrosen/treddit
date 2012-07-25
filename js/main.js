@@ -31,8 +31,8 @@ function getUrlVars() {
 }
 
 function addTrades(query) {
-    if (history) history.pushState({'query': query}, null, "search?q=" + query);
-    $.getJSON('search.json', function(data) {
+    if (history) history.pushState(null, null, "search?q='" + query +"'");
+    $.get('search.json', function(data) {
         $('.trades').append(template.expand(data));
         $('.item a').tooltip({placement: 'bottom'});
         $('#search-results').slideDown(400);
