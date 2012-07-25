@@ -22,11 +22,18 @@ var template = jsontemplate.Template('{.repeated section trades}<li class="trade
 </li>\
 {.end}');
 
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
 function addTrades(query) {
-    if (history) history.pushState(null, null, "search?q='" + query +"'");
-    $.get('search.json', function(data) {
-        foo = JSON.parse(data);
-        $('.trades').append(template.expand(JSON.parse(data)));
+    if (history) history.pushState({'query': query}, null, "search?q=" + query);
+    $.getJSON('search.json', function(data) {
+        $('.trades').append(template.expand(data));
         $('.item a').tooltip({placement: 'bottom'});
         $('#search-results').slideDown(400);
           });
@@ -40,14 +47,28 @@ function removeTrades() {
 
 function viewTrades() {
     if ($('.trade').length == 0) {
+        document.title = $('#search_field').val() + ' results on Treddit';
 	addTrades($('#search_field').val());
     } else {
         removeTrades();
+        document.title = $('#search_field').val() + ' results on Treddit';
         addTrades($('#search_field').val());
     }
     return false;
 }
+var popped = ('state' in window.history), initialURL = location.href
 
-$(window).bind("popstate", removeTrades);
+$(window).bind("popstate", function(event) {
+    var initialPop = !popped && location.href == initialURL;
+    popped = true;
+    if (initialPop) return;
+    if (getUrlVars().q) {
+        $('#search_field').val(unescape(getUrlVars().q));
+        viewTrades();
+    } else {
+         document.title = 'Treddit';
+         $('#search_field').val('');
+         removeTrades();
+    }});
 $('#search_field').submit(viewTrades);
 $('.form-search').submit(viewTrades);
