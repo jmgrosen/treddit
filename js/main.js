@@ -10,7 +10,7 @@ var template = jsontemplate.Template('{.repeated section trades}<li class="trade
       </li>\
       {.end}\
     </ul>\
-    <div class="arrow"></div>\
+    <div class="trade-arrow"></div>\
     <ul class="trans-trade pull-right">\
       {.repeated section buying_trade}\
       <li class="item {quality|html-attr-value}">\
@@ -21,6 +21,9 @@ var template = jsontemplate.Template('{.repeated section trades}<li class="trade
   </div>\
 </li>\
 {.end}');
+
+var notifications = jsontemplate.Template('<div class="notifications"><ul>{.repeated section notifications}<li>{notification_text|html}</li>{.end}</ul></div>');
+var notifications_sample = {'notifications': [{'notification_text': 'Foo has barred!'}, {'notification_text': "There's a new trade for the Huntsman!"}]};
 
 function getUrlVars() {
     var vars = {};
@@ -71,5 +74,8 @@ $(window).bind("popstate", function(event) {
          $('#search_field').val('');
          removeTrades();
     }});
+
 $('#search_field').submit(viewTrades);
 $('.form-search').submit(viewTrades);
+$('#notifications').popover({placement: 'bottom', title: 'Notifications', content: function() { return notifications.expand(notifications_sample) }, trigger: 'manual'});
+$('#notifications').click(function() {$('#notifications').popover('toggle'); $('#notifications').tooltip('hide');});

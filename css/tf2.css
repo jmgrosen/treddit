@@ -126,7 +126,7 @@ li.item .quantity {
 li.item .quantity.q-2 {
   background-color: #555555;
 }
-.arrow {
+.trade-arrow {
   display: inline-block;
   float: left;
   margin-top: 40px;
@@ -136,7 +136,7 @@ li.item .quantity.q-2 {
   width: 70px;
   height: 30px;
 }
-.arrow:after {
+.trade-arrow:after {
   display: inline-block;
   content: " ";
   width: 0;
@@ -202,12 +202,12 @@ li.item .quantity.q-2 {
     width: 96px;
     height: 96px;
   }
-  .arrow {
+  .trade-arrow {
     margin-left: 5px;
     width: 100px;
     height: 40px;
   }
-  .arrow:after {
+  .trade-arrow:after {
     margin-top: -20px;
     margin-left: 100px;
   }

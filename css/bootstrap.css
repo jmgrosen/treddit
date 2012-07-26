@@ -4227,8 +4227,6 @@ header h1 {
   margin-top: -60px;
   margin-left: 20px;
   color: white;
-  /* width: 300px; */
-
   height: 40px;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
@@ -4244,7 +4242,10 @@ header h1 {
 }
 .top-bar-nav li {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 7px;
+}
+.top-bar-nav li a {
+  cursor: pointer;
 }
 #search input {
   height: 50px;
@@ -4333,6 +4334,14 @@ body {
 }
 .profile.online img {
   border-color: #8ecafc;
+  -webkit-transition: ease-in-out 0.1s border-color;
+  -moz-transition: ease-in-out 0.1s border-color;
+  -ms-transition: ease-in-out 0.1s border-color;
+  -o-transition: ease-in-out 0.1s border-color;
+  transition: ease-in-out 0.1s border-color;
+}
+.profile.online a:hover img {
+  border-color: #5cb3fb;
 }
 @media (min-width: 1200px) {
   #search-results {

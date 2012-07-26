@@ -8,7 +8,6 @@ header h1 {
     margin-top: -60px;
     margin-left: 20px;
     color: white;
-    /* width: 300px; */
     height: 40px;
     .border-radius(0 0 5px 5px);
     background-color: @gray;
@@ -22,9 +21,10 @@ header h1 {
     list-style: none;
 }
 
-.top-bar-nav li {
+.top-bar-nav li{
+    a { cursor: pointer; }
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 7px;
 }
 
 #search {
@@ -92,7 +92,8 @@ body {
     }
     &.online a { color: #8ecafc; .transition(ease-in-out .1s color) }
     &.online a:hover { color: darken(#8ecafc, 10%); text-decoration: none }
-    &.online img { border-color: #8ecafc }
+    &.online img { border-color: #8ecafc; .transition(ease-in-out .1s border-color) }
+    &.online a:hover img { border-color: darken(#8ecafc, 10%) }
 }
 
 @media (min-width: 1200px) {
