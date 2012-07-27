@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if request.user.is_authenticated %}Hello, {{ request.user }} <a href="{% url signout %}">Sign out</a>{% else %}<a href="{% url signin %}">Sign in</a>{% endif %}
+{% endblock content %}
