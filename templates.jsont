@@ -1,0 +1,39 @@
+var template = jsontemplate.Template('{.repeated section trades}<li class="trade" data-button="Expand" data-trade-id="{trade_id|str}">\
+  <div class="account pull-left {user_status|html-attr-value}">\
+    <img src="{user_img|html-attr-value}"><a href="{user_url|html-attr-value}">{user|html}</a>\
+  </div>\
+  <div class="trade-div">\
+    <ul class="trans-trade pull-left">\
+      {.repeated section selling_trade}\
+      <li class="item {quality|html-attr-value}">\
+        <a href="{link|html-attr-value}" title="{name|html-attr-value}"><img class="item-image" src="{img|html-attr-value}"></a>\
+      </li>\
+      {.end}\
+    </ul>\
+    <div class="trade-arrow"></div>\
+    <ul class="trans-trade pull-right">\
+      {.repeated section buying_trade}\
+      <li class="item {quality|html-attr-value}">\
+        <a href="{link|html-attr-value}" title="{name|html-attr-value}"><img class="item-image" src="{img|html-attr-value}"></a>\
+      </li>\
+      {.end}\
+    </ul>\
+  </div>\
+  <div class="expand"><a>Expand</a></div>\
+</li>\
+{.end}');
+
+var template_expanded = jsontemplate.Template('<p class="description">{description|html}</p>\
+<div class="comments">\
+  {.repeated section comments}\
+  <div class="comment">\
+    <div class="account pull-left {user_status|html-attr-value}">\
+      <img src="{user_img|html-attr-value}"><a href="{user_url|html-attr-value}">{user|html}</a>\
+    </div>\
+    <p>{comment|html}</p>\
+  </div>\
+  {.end}\
+</div>');
+  
+
+var notifications = jsontemplate.Template('<div class="notifications"><ul>{.repeated section notifications}<li>{notification_text|html}</li>{.end}</ul></div>');

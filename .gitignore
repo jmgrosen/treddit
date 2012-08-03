@@ -1,4 +1,10 @@
+
+# Emacs
+\#*#
 *~
+
+# Don't share passwords to the general public!
 DB_PASSWORD
 
+# OS files
 .DS_Store

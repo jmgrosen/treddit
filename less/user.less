@@ -1,4 +1,7 @@
 
+@import "variables.less";
+@import "mixins.less";
+
 header h1 {
     font-family: @serifFontFamily;
 }
@@ -12,6 +15,11 @@ header h1 {
     .border-radius(0 0 5px 5px);
     background-color: @gray;
     z-index: 100;
+}
+
+.hero-search {
+    .transition(ease-in-out .7s left);
+    position: relative;
 }
 
 .top-bar-nav {
@@ -69,12 +77,18 @@ body {
 #search { margin-bottom: 0 }
 
 #search-results {
+    position: relative;
     margin-top: 0;
     width: 900px;
     padding-bottom: 10px;
     background-color: @grayDark;
     .border-radius(0 0 10px 10px);
+    &.all-round { .border-radius(10px 10px 10px 10px) }
     .center();
+}
+
+.steam_login img {
+    margin: 8px;
 }
 
 .profile {

@@ -16,6 +16,7 @@
       }
     </style>
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
     <link href="css/tf2.css" rel="stylesheet">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -36,19 +37,21 @@
     <div class="container">
 
       <div class="top-bar">
+       <a class="steam_login" href="#"><img src="img/steam_login.png"></a>
+       <!--
 	<ul class="top-bar-nav">
 	  <li class="profile online"><a title="Profile"><img src="http://media.steampowered.com/steamcommunity/public/images/avatars/6b/6b49e4a51683acdad92ab9b19590496a05d71175_full.jpg">Nobody</a></li>
 	  <li><a title="Submit a trade"><i class="icon-plus icon-white"></i></a></li>
 	  <li><a id="notifications" title="Notifications"><i class="icon-inbox icon-white"></i></a></li>
 	  <li><a title="Settings"><i class="icon-wrench icon-white"></i></a></li>
-	</ul>
+	</ul>-->
       </div>
 
       <header class="center">
 	<h1>Treddit</h1>
       </header>
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit" id="search">
+      <div class="hero-unit hero-search" id="search">
 	<form class="form-search">
 	  <fieldset>
 	    <div class="control-group">
@@ -93,6 +96,7 @@
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
     <script src="js/json-template.js"></script>
+    <script src="templates.jsont"
     <script>
       $('#search input').typeahead({source: ['Scorch Shot', 'Flare Gun', 'Fire Axe']});
       $('.top-bar-nav li a').tooltip({placement: 'bottom'});

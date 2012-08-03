@@ -1,0 +1,183 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+header h1 {
+  font-family: "TF2 Build", Georgia, "Times New Roman", Times, serif;
+}
+.top-bar {
+  position: fixed;
+  margin-top: -60px;
+  margin-left: 20px;
+  color: white;
+  height: 40px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  background-color: #555555;
+  z-index: 100;
+}
+.hero-search {
+  -webkit-transition: ease-in-out 0.7s left;
+  -moz-transition: ease-in-out 0.7s left;
+  -ms-transition: ease-in-out 0.7s left;
+  -o-transition: ease-in-out 0.7s left;
+  transition: ease-in-out 0.7s left;
+  position: relative;
+}
+.top-bar-nav {
+  margin-left: 11px;
+  margin-right: 11px;
+  margin-top: 9px;
+  list-style: none;
+}
+.top-bar-nav li {
+  display: inline-block;
+  margin-right: 7px;
+}
+.top-bar-nav li a {
+  cursor: pointer;
+}
+#search input {
+  height: 50px;
+  font-size: 30px;
+}
+#search button {
+  height: 60px;
+  font-size: 30px;
+}
+.typeahead.dropdown-menu {
+  -webkit-transition: ease-in-out 0.1s opacity;
+  -moz-transition: ease-in-out 0.1s opacity;
+  -ms-transition: ease-in-out 0.1s opacity;
+  -o-transition: ease-in-out 0.1s opacity;
+  transition: ease-in-out 0.1s opacity;
+  -webkit-transition: ease-in-out 0.1s opacity;
+  -moz-transition: ease-in-out 0.1s opacity;
+  -ms-transition: ease-in-out 0.1s opacity;
+  -o-transition: ease-in-out 0.1s opacity;
+  transition: ease-in-out 0.1s opacity;
+}
+.center {
+  margin: 0 auto;
+  text-align: center;
+  float: none;
+}
+header h1 {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  color: #555555;
+  text-shadow: 0px 1px 0px #e1e1e8;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-image: url('../img/logo-bg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
+}
+#search {
+  margin-bottom: 0;
+}
+#search-results {
+  position: relative;
+  margin-top: 0;
+  width: 900px;
+  padding-bottom: 10px;
+  background-color: #333333;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+  text-align: center;
+  float: none;
+}
+#search-results.all-round {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+.steam_login img {
+  margin: 8px;
+}
+.profile {
+  margin-right: 20px;
+  vertical-align: middle;
+  padding-top: 1px;
+}
+.profile a img {
+  margin-top: -3px;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  border-radius: 2px 2px 2px 2px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+.profile.online a {
+  color: #8ecafc;
+  -webkit-transition: ease-in-out 0.1s color;
+  -moz-transition: ease-in-out 0.1s color;
+  -ms-transition: ease-in-out 0.1s color;
+  -o-transition: ease-in-out 0.1s color;
+  transition: ease-in-out 0.1s color;
+}
+.profile.online a:hover {
+  color: #5cb3fb;
+  text-decoration: none;
+}
+.profile.online img {
+  border-color: #8ecafc;
+  -webkit-transition: ease-in-out 0.1s border-color;
+  -moz-transition: ease-in-out 0.1s border-color;
+  -ms-transition: ease-in-out 0.1s border-color;
+  -o-transition: ease-in-out 0.1s border-color;
+  transition: ease-in-out 0.1s border-color;
+}
+.profile.online a:hover img {
+  border-color: #5cb3fb;
+}
+@media (min-width: 1200px) {
+  #search-results {
+    width: 1100px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #search-results {
+    width: 700px;
+  }
+}
+@media (max-width: 767px) {
+  #search-results {
+    width: 500px;
+  }
+}

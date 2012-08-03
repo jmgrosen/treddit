@@ -8,6 +8,8 @@ ul.trades {
 }
 
 .trade-div {
+    width: 100%;
+    overflow: auto;
     margin-top: 75px;
 }
 
@@ -15,8 +17,36 @@ li.trade {
     position: relative;
     overflow: hidden;
     display: block;
-    border-bottom: 2px solid darken(@gray, 8%);
-    padding-bottom: 10px;
+    border-bottom: 2px solid @grayLight;
+    .expand {
+	&:hover { color: white; text-decoration: none; }
+	cursor: pointer;
+	display: block;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-top: 10px;
+	margin-right: 40px;
+        float: right;
+	clear: both;
+        background-color: @grayLight;
+        .border-radius(2px 2px 0 0);
+    }
+    .description {
+	margin-top: 15px;
+	font-size: 18px;
+	text-align: left;
+	color: white;
+	margin-left: 50px;
+    }
+    .comments .comment {
+	margin-bottom: 20px;
+	p {
+	    text-align: left;
+	    padding-left: 200px;
+	    padding-top: 40px;
+            color: white;
+        }
+    }
 }
 
 li.trade:last-child {
@@ -31,6 +61,9 @@ ul.trans-trade {
         color: lighten(@grayDark, 5%);
 	font-style: serif;
 	margin-top: -30px;
+    }
+    &.pull-left, &.pull-right {
+        width: 40%;
     }
     &.pull-right {
         margin-right: 20px;

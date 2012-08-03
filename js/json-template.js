@@ -52,16 +52,16 @@ function _MakeTokenRegex(meta_left, meta_right) {
 //
 
 function HtmlEscape(s) {
-  return s.replace(/&/g,'&amp;').
-           replace(/>/g,'&gt;').
-           replace(/</g,'&lt;');
+  return s.toString().replace(/&/g,'&amp;').
+                      replace(/>/g,'&gt;').
+                      replace(/</g,'&lt;');
 }
 
 function HtmlTagEscape(s) {
-  return s.replace(/&/g,'&amp;').
-           replace(/>/g,'&gt;').
-           replace(/</g,'&lt;').
-           replace(/"/g,'&quot;');
+  return s.toString().replace(/&/g,'&amp;').
+                      replace(/>/g,'&gt;').
+                      replace(/</g,'&lt;').
+                      replace(/"/g,'&quot;');
 }
 
 // Default ToString can be changed
