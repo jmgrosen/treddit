@@ -78,6 +78,3 @@ $("#notifications").click ->
 
 $(".trades").on "click", ".trade .expand a", (event) ->
   viewTrade $(this).index() + 1, true
-
-setTimeout 5000, ->
-  $(".hero-unit").width 0
