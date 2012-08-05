@@ -43,6 +43,8 @@
     return false;
   };
 
+  $('.search btn').click(viewTrades);
+
   viewTrade = function(n, push) {
     if (history.pushState && push) {
       history.pushState(null, null, "/trade/" + $(".trade:nth-child(" + n + ")").data("trade-id"));

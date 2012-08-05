@@ -17,6 +17,7 @@ addTrades = (query, push) ->
 removeTrades = ->
   $("#search-results").slideUp 400
   $(".trade").remove()
+
 viewTrades = (push) ->
   push = true  if push is `undefined`
   if $(".trade").length is 0
@@ -27,6 +28,9 @@ viewTrades = (push) ->
     document.title = $("#search_field").val() + " results on Treddit"
     addTrades $("#search_field").val(), push
   false
+
+$('.search btn').click viewTrades
+
 viewTrade = (n, push) ->
   history.pushState null, null, "/trade/" + $(".trade:nth-child(" + n + ")").data("trade-id")  if history.pushState and push
   $(".hero-search").css "left", "-101%"
@@ -35,6 +39,7 @@ viewTrade = (n, push) ->
     $(".trade:nth-child(" + n + ") .trade-div").after 'eco stuff'
     $("#search-results").addClass "all-round"
     $("#search-results").css("margin-top", "-" + $(".hero-search").outerHeight() + "px").slideDown()
+
 
 notifications_sample = notifications: [
   notification_text: "Foo has barred!"
