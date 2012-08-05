@@ -1,0 +1,29 @@
+<% if trades.length: %>
+<% for trade in trades: %>
+  <li class="trade" data-button="Expand" data-trade-id="<%= trade.trade_id %>">
+  <div class="account pull-left <%= trade.user_status %>">
+    <img src="<%= trade.user_img %>"><a href="<%= trade.user_url %>"><%= user|html %></a>
+  </div>
+  <div class="trade-div">
+    <ul class="trans-trade pull-left">
+      <% for item in trade.selling_trade: %>
+      <li class="item <%= item.quality %>">
+        <a href="<%= item.link %>" title="<%= item.name %>"><img class="item-image" src="<%= item.img %>"></a>
+      </li>
+      <% end %>
+    </ul>
+    <div class="trade-arrow"></div>
+    <ul class="trans-trade pull-right">
+      <% for item in trade.buying_trade: %>
+      <li class="item <%= item.quality %>">
+        <a href="<%= item.link %>" title="<%= item.name %>"><img class="item-image" src="<%= item.image %>"></a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="expand"><a>Expand</a></div>
+</li>
+<% end %>
+<% else: %>
+  No search results
+<% end %>
