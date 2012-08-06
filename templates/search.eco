@@ -1,8 +1,8 @@
-<% if trades.length: %>
-<% for trade in trades: %>
+<% if @trades.length: %>
+<% for trade in @trades: %>
   <li class="trade" data-button="Expand" data-trade-id="<%= trade.trade_id %>">
   <div class="account pull-left <%= trade.user_status %>">
-    <img src="<%= trade.user_img %>"><a href="<%= trade.user_url %>"><%= user|html %></a>
+    <img src="<%= trade.user_img %>"><a href="<%= trade.user_url %>"><%= trade.user %></a>
   </div>
   <div class="trade-div">
     <ul class="trans-trade pull-left">

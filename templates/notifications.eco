@@ -1,0 +1,5 @@
+<div class="notifications">
+  <ul><% for notif in @notifications: %>
+    <li><%= notif.notification_text %></li>
+  <% end %></ul>
+</div>

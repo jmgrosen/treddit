@@ -1,0 +1,9 @@
+<p class="description"><%= @description %></p>
+<div class="comments"><% for comment in @comments: %>
+  <div class="comment">
+    <div class="account pull-left <%= comment.user_status %>">
+      <img src="<%= comment.user_img %>"><a href="<%= comment.user_url %>"><%= comment.user %></a>
+    </div>
+    <p><%= comment.comment %></p>
+  </div><% end %>
+</div>
