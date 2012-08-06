@@ -1,8 +1,9 @@
 fs = require "fs"
 {parser, uglify} = require "uglify-js"
 coffee = require "coffee-script"
-less = require "less"
 eco = require "eco"
+less = require "less"
+csso = require 'csso'
 
 task "build", "Ready for production", ->
   build()
@@ -20,7 +21,11 @@ task "watch:debug", "Watch for changes without minifying", ->
 
 
 build = (debug = false) ->
+  CSSmin = if debug then (css, callback) -> callback css
+  else (css, callback) -> minifyCSS css, (css) -> callback css
+
   compileLess (css) ->
+    CSSmin css, (css) ->
       fs.writeFile "css/everything.css", css, ->
         console.log "CSS saved into css/everything.css"
 
@@ -45,8 +50,11 @@ compileLess = (callback) ->
         less_parser = new(less.Parser) paths: ["./less/"]
         less_parser.parse contents, (e, tree) ->
             console.error e if e
-            css = tree.toCSS(compress: true)
+            css = tree.toCSS()
             callback?(css)
+
+minifyCSS = (css, callback) ->
+  callback csso.justDoIt css
 
 compileCoffee = (callback) ->
     fs.readdir "coffee", (err, files) ->
