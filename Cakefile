@@ -1,4 +1,3 @@
-
 fs = require "fs"
 {parser, uglify} = require "uglify-js"
 coffee = require "coffee-script"
@@ -6,29 +5,41 @@ less = require "less"
 eco = require "eco"
 
 task "build", "Ready for production", ->
-    compileLess (css) ->
-        writeFile "css/everything.css", css, "CSS", ->
-            compileCoffee (js) ->
-                compileEco js, (js) ->
-                    compileJS js, (js) ->
-                        writeFile "js/everything.js", js, "Javascript", ->
-                            console.log "Done!"
+  build()
+
+task "build:debug", "Build without minifying", ->
+  build true
 
 task "watch", "Watch for changes, then build", ->
-    invoke "build"
-    fs.watch ".", (event) ->
-        invoke "build"
-    fs.watch "coffee", (event) ->
-        invoke "build"
-    fs.watch "less", (event) ->
-        invoke "build"
-    fs.watch "less/lib", (event) ->
-        invoke "build"
-    fs.watch "js/lib", (event) ->
-        invoke "build"
-    
+  watch()
+
+task "watch:debug", "Watch for changes without minifying", ->
+  watch true
+
+
+
+
+build = (debug = false) ->
+  compileLess (css) ->
+      fs.writeFile "css/everything.css", css, ->
+        console.log "CSS saved into css/everything.css"
+
+  JSmin = if debug then (js, callback) -> callback js
+  else (js, callback) -> minifyJS js, (js) -> callback js
+
+  compileCoffee (js) ->
+      compileEco js, (js) ->
+        JSmin js, (js) ->
+          fs.writeFile "js/everything.js", js, ->
+            console.log "JS saved into js/everything.js"
+
+watch = (debug = false) ->
+  build debug
+  for dir in ['.', 'coffee', 'less', 'less/lib', 'js/lib']
+    fs.watch dir, (event) ->
+      build debug
+
 compileLess = (callback) ->
-    console.log "Compiling Less..."
     fs.readFile "less/everything.less", "utf-8", (err, contents) ->
         throw err if err
         less_parser = new(less.Parser) paths: ["./less/"]
@@ -38,7 +49,6 @@ compileLess = (callback) ->
             callback?(css)
 
 compileCoffee = (callback) ->
-    console.log "Compiling Coffeescript..."
     fs.readdir "coffee", (err, files) ->
         throw err if err
         js = ""
@@ -50,7 +60,6 @@ compileCoffee = (callback) ->
         callback?(js)
 
 compileEco = (js, callback) ->
-    console.log "Compiling Eco..."
     fs.readdir "templates", (err, files) ->
         throw err if err
         files = (file for file in files when not fs.statSync("templates/#{file}").isDirectory())
@@ -65,16 +74,9 @@ compileEco = (js, callback) ->
                 """
         callback?(js)
 
-compileJS = (js, callback) ->
-    console.log "Compiling JS..."
+minifyJS = (js, callback) ->
     ast = parser.parse js
     ast = uglify.ast_mangle ast
     ast = uglify.ast_squeeze ast
     final_code = uglify.gen_code ast
     callback?(final_code)
-
-writeFile = (path, contents, description, callback) ->
-    fs.writeFile path, contents, "utf8", (err) ->
-        throw err if err
-        console.log "#{description} saved into #{path}"
-        callback?()
