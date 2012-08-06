@@ -26,8 +26,8 @@ build = (debug = false) ->
 
   compileLess (css) ->
     CSSmin css, (css) ->
-      fs.writeFile "css/everything.css", css, ->
-        console.log "CSS saved into css/everything.css"
+      fs.writeFile "css/style.css", css, ->
+        console.log "CSS saved into css/style.css"
 
   JSmin = if debug then (js, callback) -> callback js
   else (js, callback) -> minifyJS js, (js) -> callback js
@@ -35,8 +35,8 @@ build = (debug = false) ->
   compileCoffee (js) ->
       compileEco js, (js) ->
         JSmin js, (js) ->
-          fs.writeFile "js/everything.js", js, ->
-            console.log "JS saved into js/everything.js"
+          fs.writeFile "js/script.js", js, ->
+            console.log "JS saved into js/script.js"
 
 watch = (debug = false) ->
   build debug
