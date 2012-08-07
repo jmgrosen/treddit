@@ -32,7 +32,14 @@ header h1 {
 }
 
 .top-bar-nav li{
-    a { cursor: pointer; }
+    a { 
+      cursor: pointer;
+      
+      &:hover {
+        text-decoration: none;
+        text-shadow: 0 0 5px white;
+      }
+    }
     display: inline-block;
     margin-right: 7px;
     i:before { color: white }
