@@ -7,7 +7,7 @@ $('#search input').typeahead
 $('.top-var-nav li a').tooltip placement: 'bottom'
 
 addTrades = (query, push) ->
-    history.pushState null, null, "search/" + query    if history.pushState and push
+    history.pushState null, null, "search/#{query}"    if history.pushState? and push
     $.get "/search.json", (data) ->
         $(".trades").append 'hi'
         $(".item a").tooltip placement: "bottom"
@@ -27,11 +27,11 @@ viewTrades = (push = true) ->
 $('#search .btn').click viewTrades
 
 viewTrade = (n, push) ->
-    history.pushState null, null, "/trade/" + $(".trade:nth-child(" + n + ")").data("trade-id")    if history.pushState and push
+    history.pushState null, null, "/trade/" + $(".trade:nth-child(#{n})").data("trade-id")    if history.pushState and push
     $(".hero-search").css "left", "-101%"
     $("#search-results").slideUp ->
-        $(".trade:not(:nth-child(" + n + "))").css "display", "none"
-        $(".trade:nth-child(" + n + ") .trade-div").after 'eco stuff'
+        $(".trade:not(:nth-child(#{n}))").css "display", "none"
+        $(".trade:nth-child(#{n}) .trade-div").after 'eco stuff'
         $("#search-results").addClass "all-round"
         $("#search-results").css("margin-top", "-" + $(".hero-search").outerHeight() + "px").slideDown()
 
@@ -49,7 +49,7 @@ $(window).bind "popstate", (event) ->
     return    if initialPop
     urlParts = window.location.pathname.split("/")
     if urlParts.length is 2 and urlParts[0] is "search"
-        $("#search_field").val unescape(urlParts[1])
+        $("#search_field").val unescape urlParts[1]
         viewTrades false
     else unless urlParts.length is 2 and urlParts[0] is "trade"
         document.title = "Treddit"
