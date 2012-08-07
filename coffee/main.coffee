@@ -4,7 +4,7 @@ $('#search input').typeahead
         'Flare Gun'
         'Fire Axe'
     ]
-$('.top-var-nav li a').tooltip placement: 'bottom'
+$('.top-bar-nav li a').tooltip placement: 'bottom'
 
 addTrades = (query, push) ->
     history.pushState null, null, "search/#{query}"    if history.pushState? and push
