@@ -10,7 +10,7 @@ header h1 {
 
 .top-bar {
     position: fixed;
-    margin-top: -60px;
+    margin-top: 0;
     margin-left: 20px;
     color: white;
     height: 40px;
@@ -27,7 +27,7 @@ header h1 {
 .top-bar-nav {
     margin-left: 11px;
     margin-right: 11px;
-    margin-top: 9px;
+    margin-top: 7px;
     list-style: none;
 }
 
@@ -35,6 +35,11 @@ header h1 {
     a { cursor: pointer; }
     display: inline-block;
     margin-right: 7px;
+    i:before { color: white }
+    &:nth-child(2) { margin-left: -5px; }
+    &:not(.profile) a i:before { 
+        margin-top: 5px;
+    }
 }
 
 #search {
