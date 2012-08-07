@@ -32,8 +32,8 @@ build = (debug = false) ->
   JSmin = if debug then (js, callback) -> callback js
   else (js, callback) -> minifyJS js, (js) -> callback js
 
-  compileCoffee (js) ->
-      compileEco js, (js) ->
+  compileEco "", (js) ->
+    compileCoffee js, (js) ->
         JSmin js, (js) ->
           fs.writeFile "js/script.js", js, ->
             console.log "JS saved into js/script.js"
@@ -56,10 +56,9 @@ compileLess = (callback) ->
 minifyCSS = (css, callback) ->
   callback csso.justDoIt css
 
-compileCoffee = (callback) ->
+compileCoffee = (js, callback) ->
     fs.readdir "coffee", (err, files) ->
         throw err if err
-        js = ""
         files = (file for file in files when not fs.statSync("coffee/#{file}").isDirectory())
         for file in files
             do (file) ->
@@ -68,17 +67,16 @@ compileCoffee = (callback) ->
         callback?(js)
 
 compileEco = (js, callback) ->
+    js += "var ecoTemplates = {};\n"
     fs.readdir "templates", (err, files) ->
         throw err if err
         files = (file for file in files when not fs.statSync("templates/#{file}").isDirectory())
         for file in files
             do (file) ->
                 contents = fs.readFileSync "templates/#{file}", "utf-8"
-                js += """
-                    (function() {
-                    this.ecoTemplates || (this.ecoTemplates = {});
-                    this.ecoTemplates[#{JSON.stringify file.replace /(\.eco)?$/, ""}] = #{eco.precompile contents};
-                  }).call(this);
+                js += """(function() {
+                ecoTemplates['#{file.replace /(\.eco)?$/, ""}'] = #{eco.precompile contents};
+                }).call(this);
                 """
         callback?(js)
 
