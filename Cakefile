@@ -17,8 +17,11 @@ task "watch", "Watch for changes, then build", ->
 task "watch:debug", "Watch for changes without minifying", ->
   watch true
 
-
-
+task "clean", "Clean up generated files", ->
+    fs.unlinkSync "css/style.css"
+    fs.rmdirSync "css"
+    fs.unlinkSync "js/script.js"
+    console.log "Cleaned up"
 
 build = (debug = false) ->
   CSSmin = if debug then (css, callback) -> callback css
