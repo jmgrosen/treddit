@@ -7,9 +7,9 @@ $('#search input').typeahead
 $('.top-bar-nav li a').tooltip placement: 'bottom'
 
 addTrades = (query, push) ->
-    history.pushState null, null, "search/#{query}"    if history.pushState? and push
+    history.pushState null, null, "search/#{query}" if history.pushState? and push
     $.get "/search.json", (data) ->
-        $(".trades").append 'hi'
+        $(".trades").append ecoTemplates.search data
         $(".item a").tooltip placement: "bottom"
         $("#search-results").slideDown 400
     
@@ -27,13 +27,15 @@ viewTrades = (push = true) ->
 $('#search .btn').click viewTrades
 
 viewTrade = (n, push) ->
-    history.pushState null, null, "/trade/" + $(".trade:nth-child(#{n})").data("trade-id")    if history.pushState and push
-    $(".hero-search").css "left", "-101%"
-    $("#search-results").slideUp ->
-        $(".trade:not(:nth-child(#{n}))").css "display", "none"
-        $(".trade:nth-child(#{n}) .trade-div").after 'eco stuff'
-        $("#search-results").addClass "all-round"
-        $("#search-results").css("margin-top", "-" + $(".hero-search").outerHeight() + "px").slideDown()
+    id = $(".trade:nth-child(#{n})").data("trade-id")
+    $.get "/trade.json?id=#{id}", (data) ->
+        history.pushState null, null, "/trade/#{id}" if history.pushState and push
+        $(".hero-search").css "left", "-101%"
+        $("#search-results").slideUp ->
+            $(".trade:not(:nth-child(#{n}))").css "display", "none"
+            $(".trade:nth-child(#{n}) .trade-div").after ecoTemplates.trade data
+            $("#search-results").addClass "all-round"
+            $("#search-results").css("margin-top", "-" + $(".hero-search").outerHeight() + "px").slideDown()
 
 
 notifications_sample = notifications: [
