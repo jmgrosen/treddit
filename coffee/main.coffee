@@ -8,7 +8,7 @@ $('.top-bar-nav li a').tooltip placement: 'bottom'
 
 addTrades = (query, push) ->
     history.pushState null, null, "search/#{query}" if history.pushState? and push
-    $.get "/search.json", (data) ->
+    $.get "../search.json", (data) ->
         $(".trades").append ecoTemplates.search data
         $(".item a").tooltip placement: "bottom"
         $("#search-results").slideDown 400
@@ -18,7 +18,6 @@ removeTrades = ->
     $(".trade").remove()
 
 viewTrades = (push = true) ->
-    alert "hi"
     removeTrades() unless $(".trade").length is 0
     document.title = $("#search_field").val() + " results on Treddit"
     addTrades $("#search_field").val(), push
@@ -28,7 +27,7 @@ $('#search .btn').click viewTrades
 
 viewTrade = (n, push) ->
     id = $(".trade:nth-child(#{n})").data("trade-id")
-    $.get "/trade.json?id=#{id}", (data) ->
+    $.get "../trade.json?id=#{id}", (data) ->
         history.pushState null, null, "/trade/#{id}" if history.pushState and push
         $(".hero-search").css "left", "-101%"
         $("#search-results").slideUp ->
